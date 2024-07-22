@@ -16,7 +16,7 @@ def get_requirements(file_path:str)->List[str]:
     
 setup(
     name='MLOps',
-    version='0.0.1',
+    version='0.0.2',
     author='Sai Vardhan Chinuri',
     author_email='saivardhan9154@gmail.com',
     install_requires=get_requirements('requirements.txt'),

@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from src.logger.logger import logging
+from src.logger.custom_logger import logging
 from src.exception.exception import customexception
 import os
 import sys

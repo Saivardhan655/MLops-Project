@@ -3,7 +3,7 @@ import sys
 import pickle
 import numpy as np
 import pandas as pd
-from src.logger.logger import logging
+from src.logger.custom_logger import logging
 from src.exception.exception import customexception
 
 from sklearn.metrics import r2_score,mean_absolute_error,mean_squared_error
@@ -28,4 +28,11 @@ def evaluate_model(x_train,x_test,y_train,y_test,models):
             report[list(models.keys())[i]]=test_model_score
             return report
     except Exception as e:
+        raise customexception(e,sys)
+def load_object(file_path):
+    try:
+        with open(file_path,'rb') as file_obj:
+            return pickle.load(file_obj)
+    except Exception as e:
+        logging.info('Exception Occured in load_object function utils')
         raise customexception(e,sys)
